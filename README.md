@@ -92,10 +92,6 @@ Browser (Next.js :3000)  →  axios GET  →  Django API (:8000/api/)  →  SQLi
 | `status` | string | Exact match, case-insensitive (`new`, `in_review`, `closed`, `lost`) |
 | `broker_id` | number | FK match on broker |
 | `company_search` | string | Partial match on company legal name |
-| `created_from` | datetime | Range filter (gte) |
-| `created_to` | datetime | Range filter (lte) |
-| `has_documents` | boolean | Submissions with/without documents |
-| `has_notes` | boolean | Submissions with/without notes |
 
 ---
 
