@@ -1,6 +1,6 @@
 # Submission Tracker
 
-> 🎬 **[Watch the demo video](./demo.mp4)**
+> 🎬 **[Watch the demo video](https://drive.google.com/file/d/1gn-cVfuRgQGuQh0I3hNUk5mxI-gHBBMi/view?usp=sharing)**
 
 A full-stack submission management tool for operations managers to browse, filter, and inspect broker-submitted opportunities. Built with Django REST Framework and Next.js.
 
