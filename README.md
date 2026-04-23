@@ -11,17 +11,22 @@ A full-stack submission management tool for operations managers to browse, filte
 ```bash
 # Terminal 1 — Backend
 cd backend
+python -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py seed_submissions
 python manage.py runserver 0.0.0.0:8000
 
 # Terminal 2 — Frontend
 cd frontend
+npm install
 npm run dev
 ```
 
 Open **http://localhost:3000/submissions**. No `.env.local` needed — the frontend defaults to `http://localhost:8000/api`.
 
-To seed test data: `python manage.py seed_submissions` (use `--force` to rebuild).
+Re-seed at any time with `python manage.py seed_submissions --force`.
 
 ---
 
@@ -112,33 +117,3 @@ Browser (Next.js :3000)  →  axios GET  →  Django API (:8000/api/)  →  SQLi
 - Infinity stale time on broker cache
 
 ---
-
-## Files Modified
-
-| File | Changes |
-|------|---------|
-| `backend/submissions/filters/submission.py` | Added 6 filters (broker_id, company_search, date range, boolean presence) |
-| `backend/submissions/views.py` | select_related, prefetch_related, latest note subquery, broker pagination fix |
-| `backend/submissions/tests.py` | 23 tests across 4 test classes |
-| `frontend/lib/hooks/useSubmissions.ts` | Enabled queries, added page param support |
-| `frontend/lib/hooks/useBrokerOptions.ts` | Enabled query, infinity stale time |
-| `frontend/app/submissions/page.tsx` | Full list UI with table, filters, pagination, URL sync |
-| `frontend/app/submissions/[id]/page.tsx` | Full detail UI with 4 section components |
-| `frontend/app/submissions/components/` | SubmissionTable, SubmissionFilters, StatusChip, PriorityChip |
-| `frontend/app/submissions/[id]/components/` | SummarySection, ContactsSection, DocumentsSection, NotesSection |
-| `frontend/lib/constants.ts` | Color mappings and label formatting |
-- Automated tests are optional, but including targeted backend or frontend tests is a strong signal.
-
-## Evaluation Rubric
-
-- **Frontend (45%)** – UX clarity, filter UX tied to query params, state/data management, handling
-  of loading/empty/error cases, and overall polish.
-- **Backend (30%)** – API design, serialization choices, filtering implementation, and attention to
-  relational data handling.
-- **Code Quality (15%)** – Structure, naming, documentation/readability, testing where it adds
-  value.
-- **Product Thinking (10%)** – Workflow clarity, assumptions noted, and thoughtful UX details.
-
-## Optional Bonus
-
-Authentication, deployment, or extra tooling are not required but welcome if scope allows.
