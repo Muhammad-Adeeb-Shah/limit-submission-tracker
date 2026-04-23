@@ -4,6 +4,7 @@
 
 A full-stack submission management tool for operations managers to browse, filter, and inspect broker-submitted opportunities. Built with Django REST Framework and Next.js.
 
+
 ---
 
 ## Quick Start
@@ -117,3 +118,12 @@ Browser (Next.js :3000)  →  axios GET  →  Django API (:8000/api/)  →  SQLi
 - Infinity stale time on broker cache
 
 ---
+
+## Screenshots:
+<img width="1377" height="718" alt="image" src="https://github.com/user-attachments/assets/0de56a4b-351d-44a5-867d-1dd69ebb1bd3" />
+<img width="1412" height="508" alt="image" src="https://github.com/user-attachments/assets/a3b853a9-1d2f-476a-a89b-ba9ef1d5b470" />
+<img width="1099" height="724" alt="image" src="https://github.com/user-attachments/assets/aeafccdc-b5a2-4679-a4c8-2e9497a71364" />
+<img width="1075" height="726" alt="image" src="https://github.com/user-attachments/assets/400139e9-857b-42e1-88c5-e58bc95965bb" />
+
+
+
